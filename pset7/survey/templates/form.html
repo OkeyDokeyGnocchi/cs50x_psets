@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h1 class="mb-3">Form</h1>
+
+    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+    <form action="/form" method="post" class="needs-validation" novalidate>
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" name="name" id="name" aria-describedby="nameHelp" placeholder="Enter name " required>
+            <div class="invalid-feedback">
+                Please provide your name.
+            </div>
+            <small id="nameHelp" class="form-text text-muted">Your name is the thing that people call you, put it here.</small>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="robotcheck">Are you a robot?</label>
+                <div class="custom-control custom-checkbox mb-3">
+                    <input type="checkbox" class="custom-control-input" id="robotcheck" name="robotcheck" value="I'm a robot" required>
+                    <label class="custom-control-label" for="robotcheck">Yes, I am a robot</label>
+                    <div class="invalid-feedback">
+                        Please select your response.
+                    </div>
+                </div>
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="dropdownrobot1">Wait, you're a robot?</label>
+            <select class="form-control" id="dropdownrobot1" name="dropdownrobot1" required>
+                <option value="">Select one: </option>
+                <option value="For sure a robot">I'm for sure a robot</option>
+                <option value="Definitely a robot">I'm definitely a robot</option>
+                <option value="Not a robot... Just kidding">Not a robot... Just kidding, I'm a robot</option>
+                <option value="Beep Boop">Beep boop</option>
+            </select>
+            <div class="invalid-feedback">
+                Please select your response.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="dropdownrobot2">Robots aren't supposed to take surveys. How sorry are you?</label>
+            <select class="form-control" id="dropdownrobot2" name="dropdownrobot2" required>
+                <option value="">Select one: </option>
+                <option value="For sure not sorry">I'm for sure not sorry</option>
+                <option value="Definitely not sorry">I'm definitely not sorry</option>
+                <option value="Kind of sorry">OK, I'm kind of sorry</option>
+                <option value="Beep Boop">Beep boop</option>
+            </select>
+            <div class="invalid-feedback">
+                Please select your sorry-level.
+            </div>
+
+        </div>
+
+        <!-- http://getbootstrap.com/docs/4.1/components/buttons/ -->
+        <button class="btn btn-primary" type="submit">Submit</button>
+
+    </form>
+
+    <!-- Javascript for Bootstrap -->
+    <script>
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+            });
+        }, false);
+    })();
+    </script>
+{% endblock %}
