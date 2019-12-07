@@ -1,0 +1,85 @@
+html, body
+{
+    height: 100%;
+}
+body
+{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background: radial-gradient(circle, rgba(131,58,180,1) 0%, rgba(83,212,165,0.6783088235294117) 0%, rgba(58,131,77,1) 100%);
+}
+.btn-toolbar
+{
+    align-items: center;
+    justify-content: center;
+}
+.center
+{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.content
+{
+    flex: 1 0 auto;
+}
+#dark
+{
+    color: #343a40;
+}
+footer
+{
+    font-size: small;
+    flex-shrink: 0;
+    background-color: grey;
+}
+.greeting
+{
+    font-size: large;
+    font-weight: bold;
+    background-color: grey;
+    margin-bottom: 1%;
+}
+h3
+{
+    text-decoration: underline;
+    padding-bottom: 1%;
+
+}
+#info
+{
+    color: #17a2b8
+}
+#jumbotron-color
+{
+    background-color: blue;
+}
+.nightmare
+{
+    background: radial-gradient(circle, rgba(131,58,180,1) 0%, rgba(236,0,0,1) 0%, rgba(0,0,0,1) 64%);
+}
+#primary
+{
+    color: #007bff;
+}
+.spaceydiv
+{
+    padding-bottom: 1%;
+}
+.strikethrough
+{
+    text-decoration: line-through;
+}
+.tinytext
+{
+    font-size: xx-small;
+}
+#warning
+{
+    color: #ffc107;
+}
+.white-text
+{
+    color: white;
+}
