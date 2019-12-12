@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post" id="register">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control" name="username" placeholder="Username" type="text" required>
+            <div class="invalid-feedback">
+                Please select a username.
+            </div>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="password" placeholder="Password" type="password" required>
+            <div class="invalid-feedback">
+                Please enter a password.
+            </div>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="confirmation" placeholder="Confirm Password" type="password" required>
+            <div class="invalid-feedback">
+                Please confirm your password.
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+    <script type=text/javascript>
+        let user_input = document.querySelector('input');
+        user_input.onkeyup = function() {
+            $.get('/check?username=' + user_input.value, function(data) {
+                if (data == false){
+                    alert("This username is unavailable");
+                    $("#register").submit(function(event){
+                        alert("This username is unavailable");
+                        event.preventDefault();
+                    });
+                }
+            });
+        };
+    </script>
+
+{% endblock %}

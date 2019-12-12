@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ symbol }} Bought
+{% endblock %}
+
+{% block main %}
+    <h1>You bought {{ shares }} shares of {{ symbol }} at {{ stock_price | usd }} each</h1>
+
+    <ul class="list-group">
+        <li class="list-group-item">Share price: {{ stock_price | usd }}</li>
+        <li class="list-group-item">Total Cost: {{ total_price | usd }}</li>
+        <li class="list-group-item">Remaining cash: {{ new_cash_total | usd }}</li>
+    </ul>
+
+    <a href="/" class="btn btn-primary" role="button">Home</a>
+
+    <script>
+    (function() {
+        'use strict';
+        window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+                form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+            });
+        }, false);
+    })();
+    </script>
+{% endblock %}
