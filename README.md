@@ -11,3 +11,5 @@ Solution code for problem sets 3 and up for CS50x (taken 2019)
 * #### Pset 6 - (Sentimental) Hello, Mario, Cash, Caesar, Bleep
 
 * #### Pset 7 - Similarities & Survey
+
+* #### Pset 8 - Finance
